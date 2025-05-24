@@ -5,6 +5,7 @@ import uuid
 from datetime import datetime
 import mimetypes
 
+st.set_page_config(page_title="Product Management App", page_icon=":moon:", layout="centered")
 # Supabase config
 url = "https://xfbfygphfxonsicyvadw.supabase.co"
 key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhmYmZ5Z3BoZnhvbnNpY3l2YWR3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwOTMyNDEsImV4cCI6MjA2MzY2OTI0MX0.iMYPQ3zZOl1WLLDugTV24IAKFOE5XLI_JkMQp68tBKU"
