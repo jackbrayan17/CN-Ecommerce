@@ -35,6 +35,9 @@ def upload_image_to_supabase(image_file, folder="products"):
 
         upload_res = supabase.storage.from_("product-image").upload(file_path, file_bytes, {"content-type": mime_type})
 
+        # Log response for debugging
+        print(f"Upload result for {file_path}: {upload_res}")
+
         if upload_res.error:
             return {"error": f"Upload failed: {upload_res.error}"}
 
@@ -42,8 +45,8 @@ def upload_image_to_supabase(image_file, folder="products"):
         return {"url": public_url, "path": file_path}
 
     except Exception as e:
+        print(f"Exception while uploading {image_file.name}: {e}")
         return {"error": f"Failed to upload image: {e}"}
-
 
 # 📦 Add Product Tab
 with tab1:
