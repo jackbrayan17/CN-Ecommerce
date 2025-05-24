@@ -6,3 +6,4 @@ seaborn
 pandas
 streamlit_option_menu
 groq
+supabase
