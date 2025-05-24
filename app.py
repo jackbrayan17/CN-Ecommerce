@@ -35,8 +35,8 @@ def upload_image_to_supabase(image_file, folder="products"):
 
         upload_res = supabase.storage.from_("product-image").upload(file_path, file_bytes, {"content-type": mime_type})
 
-        if upload_res.status_code != 200:
-            return {"error": f"Upload failed with status {upload_res.status_code}."}
+        if upload_res.error:
+            return {"error": f"Upload failed: {upload_res.error}"}
 
         public_url = supabase.storage.from_("product-image").get_public_url(file_path)
         return {"url": public_url, "path": file_path}
